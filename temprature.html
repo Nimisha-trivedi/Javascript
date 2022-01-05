@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temprature</title>
+  </head>
+  <body>
+    <input type="text" name="cur" id="cur" />
+    <input type="number" name="temp" id="temp" />
+    <input type="text" name="conv" id="conv" />
+    <button onclick="convert()">Check</button>
+    <script>
+      function convert() {
+        let a = document.getElementById("cur").value.toUpperCase();
+        let b = document.getElementById("temp").value;
+        let c = document.getElementById("conv").value.toUpperCase();
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        let result;
+        if (a == "K" && c == "C") {
+          result = b - 273.15;
+        } else if (a == "K" && c == "F") {
+          result = (b - 273.15) * 1.8;
+        } else if ((a = "F" && c == "K")) {
+          result = ((b - 32) * 5) / 9 + 273.15;
+        } else if ((a = "F" && c == "C")) {
+          result = (b - 32) / 1.8;
+        } else if ((a = "C" && c == "K")) {
+          result = b + 273;
+        } else if ((a = "C" && c == "F")) {
+          result = b * (9 / 5) + 32;
+        }
+
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>

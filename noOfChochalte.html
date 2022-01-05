@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>No. of chocolates</title>
+    <script>
+      function countRec(choc, wrap) {
+        if (choc < wrap) return 0;
+
+        let newChoc = choc / wrap;
+
+        return newChoc + countRec(newChoc + (choc % wrap), wrap);
+      }
+
+      function countMaxChoco(money, price, wrap) {
+        let choc = money / price;
+
+        return choc + countRec(choc, wrap);
+      }
+
+      let money = 21;
+      let price = 1;
+
+      let wrap = 3;
+      document.write(
+        "Number of choclate is:" + Math.floor(countMaxChoco(money, price, wrap))
+      );
+    </script>
+  </head>
+</html>
